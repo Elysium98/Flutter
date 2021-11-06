@@ -7,7 +7,6 @@ void main() {
 }
 
 
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -52,12 +51,11 @@ class _MyAppState extends State<MyApp>{
                     if(currentValue == null){
                       errorText = 'enter a valid number';
                        text = '';
-
                     } else{
                       errorText = null;
                     }
-
                   });
+
                 },
                 decoration:  InputDecoration(
                   hintText: 'enter the amount in Euro',
@@ -74,8 +72,6 @@ class _MyAppState extends State<MyApp>{
 
                   setState(() {
                       text = euro!.toStringAsFixed(2) + ' RON';
-
-
                   });
 
                 },
