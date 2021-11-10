@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+
 
 void main() {
-  debugPaintSizeEnabled=true;
   runApp(const MyApp());
 }
 
@@ -43,20 +42,6 @@ class _MyAppState extends State<MyApp>{
               child: TextField(
                 controller: controller,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
-                onChanged: (String? value){
-                  final String value = controller.text;
-                  final double? currentValue = double.tryParse(value);
-
-                  setState(() {
-                    if(currentValue == null){
-                      errorText = 'enter a valid number';
-                       text = '';
-                    } else{
-                      errorText = null;
-                    }
-                  });
-
-                },
                 decoration:  InputDecoration(
                   hintText: 'enter the amount in Euro',
                   errorText: errorText,
@@ -67,22 +52,30 @@ class _MyAppState extends State<MyApp>{
                 onPressed: (){
                   final String value = controller.text;
                   final double? currentValue = double.tryParse(value);
-                  final double? inputValue =  currentValue;
-                  final double? euro =  inputValue! * 4.50;
 
                   setState(() {
-                      text = euro!.toStringAsFixed(2) + ' RON';
+
+                    if(currentValue == null) {
+                      errorText = 'enter a valid number';
+                      text = '';
+                    } else {
+                      final double? euro =  (currentValue! * 4.50);
+                      text = '${euro?.toStringAsFixed(2)}  RON ' ;
+                      errorText = null;
+                    }
                   });
 
                 },
                 child: Text('CONVERT!',
                   style: TextStyle(color: Colors.black)
                 ),
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white30)),
-               ),
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white30)
+              ),
+            ),
             Text(text,
               style: TextStyle(fontSize: 30,
-              color: Colors.grey)),
+              color: Colors.grey)
+            ),
           ],
         ),
       ),
