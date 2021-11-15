@@ -108,11 +108,8 @@ class _MyAppState extends State<MyApp> {
                           }
                         });
                       },
-                      child: Text(textButton,
-                          style: TextStyle(color: Colors.black)),
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white30)),
+                      child: Text(textButton, style: TextStyle(color: Colors.black)),
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white30)),
                     ),
                   ],
                 ),

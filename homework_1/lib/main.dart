@@ -60,8 +60,7 @@ class _MyAppState extends State<MyApp> {
                 });
               },
               child: Text('CONVERT!', style: TextStyle(color: Colors.black)),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.white30)),
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white30)),
             ),
             Text(text, style: TextStyle(fontSize: 30, color: Colors.grey)),
           ],
