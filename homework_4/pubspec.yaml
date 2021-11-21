@@ -1,0 +1,39 @@
+name: homework_4
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  audioplayers: ^0.20.1
+  translator: ^0.1.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/salut.mp3
+    - assets/salut(germana).mp3
+    - assets/ma-numesc.mp3
+    - assets/ma-numesc(germana).mp3
+    - assets/cum esti.mp3
+    - assets/cum esti(germana).mp3
+    - assets/sunt bine.mp3
+    - assets/sunt bine(germana).mp3
+
+
+
+

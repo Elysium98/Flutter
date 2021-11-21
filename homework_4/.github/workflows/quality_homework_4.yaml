@@ -1,0 +1,16 @@
+name: Check the quality of my code
+on:
+  push:
+
+jobs:
+  quality_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+      - name: Run format
+        run: flutter format -l 120 --set-exit-if-changed .
+      - name: Run analysis
+        run: flutter analyze
